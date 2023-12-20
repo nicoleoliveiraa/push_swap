@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:23 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/04 12:37:38 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:15:46 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	push(t_stack **fst, t_stack **sec)
 
 	if (*fst == NULL)
 		return ;
-	aux = (*fst)->next;
-	(*fst)->next = *sec;
-	*sec = *fst;
-	*fst = aux;
+	aux = (*fst);
+	(*fst) = (*fst)->next;
+	aux->next = (*sec);
+	(*sec) = aux;
 	check_index(*fst);
 	check_index(*sec);
 }

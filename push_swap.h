@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/19 15:16:09 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:39:30 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,14 @@ void		sort_three(t_stack **a);
 //t_stack		*get_target(t_stack *a, t_stack *b);
 
 //midle
-void	to_organize(t_stack *a, t_stack *b);
 void	to_divide(t_stack *a, t_stack* b);
 void	move(t_stack *a, t_stack *b, int size);
 int	find_middle(t_stack *a);
 int find_size(t_stack *a);
+
+void	to_organize(t_stack *a, t_stack *b);
+void	sort(t_stack *a, t_stack *b);
+t_stack	*get_target(t_stack *reference, t_stack *to_search);
+
 
 #endif

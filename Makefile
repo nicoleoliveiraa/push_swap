@@ -6,14 +6,14 @@
 #    By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:18:19 by nsouza-o          #+#    #+#              #
-#    Updated: 2023/12/05 16:04:45 by nsouza-o         ###   ########.fr        #
+#    Updated: 2023/12/20 12:26:50 by nsouza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 SRCS = check_index.c get_elements.c operations_p.c operations_r.c \
 	operations_rr.c operations_s.c stack.c main.c check_parameters.c \
-	utils.c algorithm2and3.c to_organize.c
+	utils.c algorithm2and3.c middle.c to_organize.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc

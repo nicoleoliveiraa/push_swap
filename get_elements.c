@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:02 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/01 14:58:44 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:37:31 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ long int	ft_atol(char *nptr)
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			signal *= -1;
+			signal = -1;
 		i++;
 	}
 	while (nptr[i] > 47 && nptr[i] < 58)

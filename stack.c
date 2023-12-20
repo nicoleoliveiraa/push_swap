@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:36 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/19 15:17:56 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:22:46 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	while (aux->next != NULL)
 		aux = aux->next;
 	aux->next = new;
+}
+
+int find_size(t_stack *a)
+{
+	int size;
+	t_stack *temp;
+	
+	temp = a;
+	while (temp->next != NULL)
+		temp = temp->next;
+	size = temp->index;
+	return (size);
 }
 
 /* void	ft_lstadd_front(t_stack **lst, t_stack *new)
