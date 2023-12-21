@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 15:39:30 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:43:51 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ int find_size(t_stack *a);
 void	to_organize(t_stack *a, t_stack *b);
 void	sort(t_stack *a, t_stack *b);
 t_stack	*get_target(t_stack *reference, t_stack *to_search);
+
+//cost
+int	find_cost(t_stack *a, t_stack *target);
+int cost_two(t_stack *a, t_stack* target);
 
 
 #endif
