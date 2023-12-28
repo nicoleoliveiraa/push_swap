@@ -25,7 +25,7 @@ void	rotate(t_stack *stack)
 		stack = stack->next;
 	}
 	stack->number = aux;
-	check_index(stack);
+	check_index(stack, NULL);
 }
 
 void	ra(t_stack *stack_a)

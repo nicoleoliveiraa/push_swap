@@ -22,8 +22,8 @@ void	push(t_stack **fst, t_stack **sec)
 	(*fst) = (*fst)->next;
 	aux->next = (*sec);
 	(*sec) = aux;
-	check_index(*fst);
-	check_index(*sec);
+	check_index(*fst, &(*fst));
+	check_index(*sec, &(*sec));
 }
 
 void	pa(t_stack **stack_b, t_stack **stack_a)

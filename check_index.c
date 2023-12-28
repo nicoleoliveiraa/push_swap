@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	check_index(t_stack *stack)
+void	check_index(t_stack *stack, t_stack **head)
 {
 	int	i;
 
@@ -20,6 +20,8 @@ void	check_index(t_stack *stack)
 	while (stack != NULL)
 	{
 		stack->index = i;
+		if(head != NULL)
+			stack->first = (*head);
 		i++;
 		stack = stack->next;
 	}

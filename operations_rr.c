@@ -31,7 +31,7 @@ void	r_rotate(t_stack **stack)
 	current->next = first;
 	previous->next = NULL;
 	(*stack) = current;
-	check_index(*stack);
+	check_index(*stack, &first);
 }
 
 void	rra(t_stack **stack_a)

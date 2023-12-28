@@ -26,9 +26,17 @@ typedef struct s_stack
 	int				index;
 	int				cost;
 	int				middle_check;
+	struct s_stack	*first;
 	struct s_stack	*target;
 	struct s_stack	*next;
+	int size; 
 }	t_stack;
+
+/* typedef struct s_info
+{
+	t_stack *first;
+};	t_info; */
+
 
 t_stack		*get_elements(int argc, char **argv);
 long int	ft_atol(char *nptr);
@@ -45,7 +53,7 @@ void		rr(t_stack *stack_a, t_stack *stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
-void		check_index(t_stack *stack);
+void		check_index(t_stack *stack, t_stack **head);
 int			check_parameters(int argc, char **argv);
 
 //utils

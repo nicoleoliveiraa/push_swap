@@ -12,73 +12,97 @@
 
 #include "push_swap.h"
 
-void	order_v(int *v, int size)
+int find_big(t_stack *list)
 {
-	int i;
-	int swap;
+	int big;
 
-	i = 0;
-	while (i < size)
+	big = 0;
+	while (list)
 	{
-		if (v[i] > v[i + 1])
-		{
-			swap = v[i];
-			v[i] = v[i + 1];
-			v[i + 1] = swap;
-			i = 0;
-		}
-		else
-			i++;		
+		if (list->number > big)
+			big = list->number;
+		list = list->next;
 	}
+	return (big);
 }
 
+int	find_min(t_stack *list)
+{
+	long int min;
+	t_stack	*aux;
 
+	min = find_big(list);
+	aux = list->first;
+	while (list)
+	{
+		if (list->middle_check == 0)
+		{
+			if (list->number < min)
+				min = list->number;
+		}
+		list = list->next;
+	}
+	printf("\n");
+	while (aux)
+	{
+		if (min == aux->number)
+		{
+			aux->middle_check = 1;
+			break;
+		}
+		aux = aux->next;
+	}
+	return (min);
+}
 
 int	find_middle(t_stack *a)
 {
 	int	middle;
-	int *v;
+	long int *v;
 	int i;
 	int size;
 
 	i = 0;
 	middle = 0;
 	size = find_size(a);
-	v = malloc(sizeof(int) * (size));
-	while (a != NULL)
+	v = (long int *)malloc(sizeof(long int) * size);
+	while (i < size)
 	{
-		v[i] = a->number;
-		a = a->next;
+		v[i] = find_min(a->first);
+		printf("%ld\n", v[i]);
 		i++;
 	}
-	order_v(v, size);
 	middle = v[size / 2];
+	free(v);
 	return (middle);
 }
 
 void	to_divide(t_stack *a, t_stack* b)
 {
-	int	middle;
-	t_stack *temp;
+	long int	middle;
 	int size;
+	int i;
 
-	temp = a;
+	i = 0;
 	size = find_size(a);
-	while (size > 3)
+	while (size > 2)
 	{
 		middle = find_middle(a);
-		printf("%d", middle);
-		while (temp != NULL)
+		//printf("%d", middle);
+	 	while ((size / 2) > i)
 		{
-			if (temp->number <= middle)
-				temp->middle_check = 1;
+			if (a->first->number < middle)
+			{
+				pb(&a, &b);
+			}
 			else
-				temp->middle_check = 0;
-			temp = temp->next;
+				ra(a);
+			i++;
 		}
-		temp = a;
-		move(a, b, size);
-		size = find_size(a);
+		//temp = temp->first;
+		//printf("%d!", middle);
+		//size = find_size(a->first);
+		//size--;
 	}
 }
 
@@ -93,6 +117,7 @@ void move(t_stack *a, t_stack *b, int size)
 			pb(&a, &b);
 		else
 			ra(a);
+		//printf("%d", aux->middle_check);
 		//aux = aux->next;
 		size--;
 	}
