@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:31:45 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 14:54:37 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/01/02 15:00:43 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	find_min(t_stack *list)
 		}
 		list = list->next;
 	}
-	printf("\n");
+	//printf("\n");
 	while (aux)
 	{
 		if (min == aux->number)
@@ -69,7 +69,7 @@ int	find_middle(t_stack *a)
 	while (i < size)
 	{
 		v[i] = find_min(a->first);
-		printf("%ld\n", v[i]);
+		//printf("%ld\n", v[i]);
 		i++;
 	}
 	middle = v[size / 2];
@@ -99,9 +99,9 @@ void	to_divide(t_stack *a, t_stack* b)
 				ra(a);
 			i++;
 		}
+		size = find_size(a->first);
 		//temp = temp->first;
 		//printf("%d!", middle);
-		//size = find_size(a->first);
 		//size--;
 	}
 }
