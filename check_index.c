@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:10:59 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/01 14:52:09 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:13:48 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	check_index(t_stack *stack, t_stack **head)
 	while (stack != NULL)
 	{
 		stack->index = i;
-		if(head != NULL)
-			stack->first = (*head);
+		stack->first = (*head);
 		i++;
 		stack = stack->next;
 	}

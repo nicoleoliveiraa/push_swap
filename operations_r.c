@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:46:38 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/04 12:37:22 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:28:08 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,19 @@
 void	rotate(t_stack *stack)
 {
 	int	aux;
+	t_stack **head;
 
 	if (!stack)
 		return ;
 	aux = stack->number;
+	head = &stack->next;
 	while (stack->next != NULL)
 	{
 		stack->number = stack->next->number;
 		stack = stack->next;
 	}
 	stack->number = aux;
-	check_index(stack, NULL);
+	check_index(*head, &(*head));
 }
 
 void	ra(t_stack *stack_a)

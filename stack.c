@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:36 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 12:22:46 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:20:15 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack	*ft_lstnew(int nb, int index)
 	new->index = index;
 	new->cost = 0;
 	new->middle_check = 0;
+	new->first = NULL;
 	new->target = NULL;
 	new->next = NULL;
 	return (new);

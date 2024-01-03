@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:31:45 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/01/02 15:00:43 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:41:54 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	find_middle(t_stack *a)
 	while (i < size)
 	{
 		v[i] = find_min(a->first);
-		//printf("%ld\n", v[i]);
 		i++;
 	}
 	middle = v[size / 2];
@@ -77,6 +76,16 @@ int	find_middle(t_stack *a)
 	return (middle);
 }
 
+int get_last(t_stack *a)
+{
+	int i;
+
+	i = 0;
+	while (a->next != NULL)
+		a = a->next;
+	i = a->number;
+	return (i);
+}
 void	to_divide(t_stack *a, t_stack* b)
 {
 	long int	middle;
@@ -88,22 +97,19 @@ void	to_divide(t_stack *a, t_stack* b)
 	while (size > 2)
 	{
 		middle = find_middle(a);
-		//printf("%d", middle);
-	 	while ((size / 2) > i)
+		printf("%ld\n", middle);
+		i = get_last(a);
+	 	while (a->first->number != i)
 		{
-			if (a->first->number < middle)
-			{
+			if (a->first->number <= middle)
 				pb(&a, &b);
-			}
 			else
 				ra(a);
-			i++;
 		}
 		size = find_size(a->first);
-		//temp = temp->first;
-		//printf("%d!", middle);
-		//size--;
 	}
+	check_index(a->first, &a->first);
+	check_index(b->first, &b->first);
 }
 
 void move(t_stack *a, t_stack *b, int size)
