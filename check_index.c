@@ -21,6 +21,7 @@ void	check_index(t_stack *stack, t_stack **head)
 	{
 		stack->index = i;
 		stack->first = (*head);
+		stack->middle_check = 0;
 		i++;
 		stack = stack->next;
 	}

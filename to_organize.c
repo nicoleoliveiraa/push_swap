@@ -14,14 +14,14 @@
 
 void	to_organize(t_stack *a, t_stack *b)
 {
-	t_stack *p;
+	//t_stack *p;
 	to_divide(a, b);
-	p = a->first;
+	/* p = a->first;
 	while (p != NULL)
 	{
 		printf("%ld %ld\n", p->number, p->first->number);
 		p = p->next;
-	}
+	} */
 /* 	p = b->first;
 	while (p != NULL)
 	{

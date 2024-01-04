@@ -42,7 +42,6 @@ int	find_min(t_stack *list)
 		}
 		list = list->next;
 	}
-	//printf("\n");
 	while (aux)
 	{
 		if (min == aux->number)
@@ -55,16 +54,14 @@ int	find_min(t_stack *list)
 	return (min);
 }
 
-int	find_middle(t_stack *a)
+int	find_middle(t_stack *a, int size)
 {
 	int	middle;
 	long int *v;
 	int i;
-	int size;
 
 	i = 0;
 	middle = 0;
-	size = find_size(a);
 	v = (long int *)malloc(sizeof(long int) * size);
 	while (i < size)
 	{
@@ -83,7 +80,7 @@ int get_last(t_stack *a)
 	i = 0;
 	while (a->next != NULL)
 		a = a->next;
-	i = a->number;
+	i = a->index;
 	return (i);
 }
 void	to_divide(t_stack *a, t_stack* b)
@@ -91,21 +88,22 @@ void	to_divide(t_stack *a, t_stack* b)
 	long int	middle;
 	int size;
 	int i;
+	t_stack *p;
 
 	i = 0;
 	size = find_size(a);
 	while (size > 2)
 	{
-		middle = find_middle(a);
-		printf("%ld\n", middle);
+		middle = find_middle(a, size);
 		i = get_last(a);
-	 	while (a->first->number != i)
+	 	while (i-- >= 0)
 		{
 			if (a->first->number <= middle)
 				pb(&a, &b);
 			else
 				ra(a);
 		}
+		check_index(a->first, &a->first);
 		size = find_size(a->first);
 	}
 	check_index(a->first, &a->first);

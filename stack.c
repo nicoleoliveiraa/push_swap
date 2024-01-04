@@ -51,10 +51,13 @@ int find_size(t_stack *a)
 	int size;
 	t_stack *temp;
 	
+	size = 0;
 	temp = a;
-	while (temp->next != NULL)
+	while (temp != NULL)
+	{
 		temp = temp->next;
-	size = temp->index;
+		size++;
+	}
 	return (size);
 }
 

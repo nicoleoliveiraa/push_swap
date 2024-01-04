@@ -70,7 +70,7 @@ void		sort_three(t_stack **a);
 //midle
 void	to_divide(t_stack *a, t_stack* b);
 void	move(t_stack *a, t_stack *b, int size);
-int	find_middle(t_stack *a);
+int	find_middle(t_stack *a, int size);
 int find_size(t_stack *a);
 
 void	to_organize(t_stack *a, t_stack *b);
