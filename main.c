@@ -24,7 +24,12 @@ int	main(int argc, char **argv)
 	if (!check_parameters(argc, argv))
 		return (0);
 	stack_a = get_elements(argc, argv);
-	to_organize(stack_a, stack_b);
+	if(find_size(stack_a) == 2)
+		sort_two(&stack_a);
+	else if(find_size(stack_a) == 3)
+		sort_three(&stack_a);
+	else
+		to_divide(stack_a, stack_b);
 	//pb(&stack_a, &stack_b);
 	//sort_three(&stack_a);
 	//rra(&stack_a);

@@ -26,6 +26,8 @@ typedef struct s_stack
 	int				index;
 	int				cost;
 	int				middle_check;
+	struct s_stack	*max;
+	struct s_stack	*min;
 	struct s_stack	*first;
 	struct s_stack	*target;
 	struct s_stack	*next;
@@ -81,5 +83,8 @@ t_stack	*get_target(t_stack *reference, t_stack *to_search);
 int	find_cost(t_stack *a, t_stack *target);
 int cost_two(t_stack *a, t_stack* target);
 
+int get_last(t_stack *stack);
+int	find_min(t_stack *list);
+t_stack *find_max(t_stack *stack);
 
 #endif

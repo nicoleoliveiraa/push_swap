@@ -88,18 +88,20 @@ void	to_divide(t_stack *a, t_stack* b)
 	long int	middle;
 	int size;
 	int i;
-	t_stack *p;
 
 	i = 0;
 	size = find_size(a);
-	while (size > 2)
+	while (size > 3)
 	{
 		middle = find_middle(a, size);
 		i = get_last(a);
 	 	while (i-- >= 0)
 		{
 			if (a->first->number <= middle)
-				pb(&a, &b);
+			{
+				if(find_size(a) > 3)
+					pb(&a, &b);
+			}
 			else
 				ra(a);
 		}
@@ -108,6 +110,7 @@ void	to_divide(t_stack *a, t_stack* b)
 	}
 	check_index(a->first, &a->first);
 	check_index(b->first, &b->first);
+	to_organize(a->first, b->first);
 }
 
 void move(t_stack *a, t_stack *b, int size)

@@ -24,6 +24,8 @@ t_stack	*ft_lstnew(int nb, int index)
 	new->cost = 0;
 	new->middle_check = 0;
 	new->first = NULL;
+	new->min = NULL;
+	new->max = NULL;
 	new->target = NULL;
 	new->next = NULL;
 	return (new);

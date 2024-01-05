@@ -22,7 +22,23 @@ void	check_index(t_stack *stack, t_stack **head)
 		stack->index = i;
 		stack->first = (*head);
 		stack->middle_check = 0;
+		stack->max = find_max(*head);
+		//stack->min = find_m(*head);
 		i++;
 		stack = stack->next;
 	}
+}
+
+t_stack *find_max(t_stack *stack)
+{
+	t_stack *max;
+
+	max = stack;
+	while (stack)
+	{
+		if (stack->number > max->number)
+			max = stack;
+		stack = stack->next;
+	}
+	return (max);
 }

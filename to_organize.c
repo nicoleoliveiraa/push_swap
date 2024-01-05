@@ -14,26 +14,19 @@
 
 void	to_organize(t_stack *a, t_stack *b)
 {
-	//t_stack *p;
-	to_divide(a, b);
-	/* p = a->first;
-	while (p != NULL)
+	t_stack *temp;
+
+	temp = b;
+	while (temp != NULL)
 	{
-		printf("%ld %ld\n", p->number, p->first->number);
-		p = p->next;
-	} */
-/* 	p = b->first;
-	while (p != NULL)
+		temp->target = get_target(temp, a);
+		temp = temp->next;
+	}
+	while(b)
 	{
-		printf("%ld %ld\n", p->number, p->first->number);
-		p = p->next;
-	} */
-	/* if(find_size(a) == 2)
-		sort_two(&a);
-	if(find_size(a) == 3)
-		sort_three(&a);
- else
-		sort(a, b);*/
+		printf("%ld, %ld \n", b->number, b->target->number);
+		b = b->next;
+	}
 }
 /* void	sort(t_stack *a, t_stack *b)
 {
@@ -53,22 +46,25 @@ void	to_organize(t_stack *a, t_stack *b)
 		}
 		//move(a, b);
 	}
-}
+} */
 
 t_stack	*get_target(t_stack *reference, t_stack *to_search)
 {
 	t_stack *target;
 	
 	target = to_search;
+
 	while (to_search != NULL)
 	{
-		if (reference->number < to_search->number && \
+		if (reference->number == find_min(reference->first))
+			target = find_max(to_search);
+		else if (reference->number < to_search->number && \
 			to_search->number < target->number)
 			target = to_search;
 		to_search = to_search->next;
 	}
 	return (target);
-} */
+}
 
 /* int	find_cost(t_stack *a, t_stack *target)
 {
