@@ -13,7 +13,7 @@
 NAME = push_swap
 SRCS = check_index.c get_elements.c operations_p.c operations_r.c \
 	operations_rr.c operations_s.c stack.c main.c check_parameters.c \
-	utils.c algorithm2and3.c middle.c to_organize.c
+	utils.c algorithm2and3.c middle.c to_organize.c move.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc

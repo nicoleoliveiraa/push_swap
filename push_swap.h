@@ -26,12 +26,12 @@ typedef struct s_stack
 	int				index;
 	int				cost;
 	int				middle_check;
+	int				size;
 	struct s_stack	*max;
 	struct s_stack	*min;
 	struct s_stack	*first;
 	struct s_stack	*target;
-	struct s_stack	*next;
-	int size; 
+	struct s_stack	*next; 
 }	t_stack;
 
 /* typedef struct s_info
@@ -80,11 +80,21 @@ void	sort(t_stack *a, t_stack *b);
 t_stack	*get_target(t_stack *reference, t_stack *to_search);
 
 //cost
-int	find_cost(t_stack *a, t_stack *target);
-int cost_two(t_stack *a, t_stack* target);
+int	find_cost(t_stack *reference, t_stack *target);
+void get_middle_check(t_stack *ref);
 
 int get_last(t_stack *stack);
 int	find_min(t_stack *list);
 t_stack *find_max(t_stack *stack);
+
+//move
+void	to_init_move(t_stack *b);
+void to_move(t_stack *move);
+void	move_together(t_stack *move, t_stack *target);
+void	move_together_up(t_stack *move, t_stack *target, int m, int t);
+void	move_together_down(t_stack *move, t_stack *target, int m, int t);
+void move_apart(t_stack *move, t_stack *target);
+void	move_up(t_stack *move, int i);
+void	move_down(t_stack *move, int i);
 
 #endif

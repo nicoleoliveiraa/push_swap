@@ -25,11 +25,17 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_a = get_elements(argc, argv);
 	if(find_size(stack_a) == 2)
+	{
 		sort_two(&stack_a);
+		return (0);
+	}
 	else if(find_size(stack_a) == 3)
+	{
 		sort_three(&stack_a);
-	else
-		to_divide(stack_a, stack_b);
+		return (0);
+	}
+	printf("entra");
+	to_divide(stack_a, stack_b);
 	//pb(&stack_a, &stack_b);
 	//sort_three(&stack_a);
 	//rra(&stack_a);
