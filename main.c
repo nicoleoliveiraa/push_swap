@@ -34,32 +34,13 @@ int	main(int argc, char **argv)
 		sort_three(&stack_a);
 		return (0);
 	}
-	printf("entra");
-	to_divide(stack_a, stack_b);
-	//pb(&stack_a, &stack_b);
-	//sort_three(&stack_a);
-	//rra(&stack_a);
-	/* stack_b = NULL;
-	rr(stack_a, stack_b);
-	//sa(stack_a);
-	//pb(&stack_a, &stack_b);*/
-	//printf("%ld", stack_a->first->number);
-/* 	while (stack_a != NULL)
+	else
+		to_divide(&stack_a, &stack_b);
+	while(stack_a)
 	{
-		printf("%ld %ld\n", stack_a->number, stack_a->first->number);
-		stack_a = stack_a->next;
-	} */
-	//printf("%ld", stack_b->first->number);
- 	/* while (stack_a != NULL)	
-	{
-		printf("stack_A %ld\n", stack_a->number);
+		printf("%ld\n", stack_a->number);
 		stack_a = stack_a->next;
 	}
-	//sb(stack_b);*/
- 	/* while (stack_b != NULL)
-	{
-		printf("stack_B %ld %ld\n", stack_b->number, stack_b->first->number);
-		stack_b = stack_b->next;
-	} */
+	
 	return (0);
 }

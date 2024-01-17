@@ -53,6 +53,6 @@ t_stack	*get_elements(int argc, char **argv)
 		ft_lstadd_back(&a, aux);
 		i++;
 	}
-	check_index(a, &a);
+	check_index(&a);
 	return (a);
 }

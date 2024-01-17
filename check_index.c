@@ -12,20 +12,19 @@
 
 #include "push_swap.h"
 
-void	check_index(t_stack *stack, t_stack **head)
+void	check_index(t_stack **stack)
 {
 	int	i;
 
 	i = 1;
-	while (stack != NULL)
+	while ((*stack) != NULL)
 	{
-		stack->index = i;
-		stack->first = (*head);
-		stack->middle_check = 0;
-		stack->max = find_max(*head);
-		//stack->min = find_m(*head);
+		(*stack)->index = i;
 		i++;
-		stack = stack->next;
+		(*stack)->first = stack;
+		(*stack)->middle_check = 0;
+		(*stack)->max = find_max(stack);
+		(*stack) = (*stack)->next;
 	}
 }
 

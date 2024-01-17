@@ -12,16 +12,14 @@
 
 #include "push_swap.h"
 
-void	to_organize(t_stack *a, t_stack *b)
+void	to_organize(t_stack **a, t_stack **b)
 {
 	t_stack *temp;
-	int size_b;
 
-	size_b = 1;
-	temp = b;
-	sort_three(&a);
-	while (size_b)
+	sort_three(a);
+	while (b)
 	{
+		temp = *b;
 		while (temp != NULL)
 		{
 			temp->target = get_target(temp, a);
@@ -29,59 +27,94 @@ void	to_organize(t_stack *a, t_stack *b)
 			temp->cost = find_cost(temp, temp->target);
 			temp = temp->next;
 		}
-		to_init_move(b->first);
-		size_b = find_size(temp->first);
-	}
-/* 	while(b)
-	{
-		printf("b%ld, %ld, %d \n", b->number, b->target->number, b->cost);
-		b = b->next;
-	}
-	temp = a->first;
-	while(temp)
-	{
-		printf("%ld, %d \n", temp->number, temp->cost);
-		temp = temp->next;
-	} */
-}
-/* void	sort(t_stack *a, t_stack *b)
-{
-	//t_stack *head;
-	
-	pb(&a, &b);
-	pb(&a, &b);
-	//head = a;
-	while (a)
-	{	
-		while (a)
+		temp = *b;
+		while(temp)
 		{
-			a->target = get_target(a, b);
-			a->cost = find_cost(a, a->target);
-			printf("%d\n", a->cost);
-			a = a->next;
+			printf("b%ld %ld %d %d %d\n", temp->number, temp->target->number, temp->cost, temp->middle_check, temp->index);
+			temp = temp->next;
 		}
-		//move(a, b);
+		temp = *a;
+		check_middle(*a);
+		while(temp)
+		{
+			printf("a%ld %d %d\n", temp->number, temp->middle_check, temp->index);
+			temp = temp->next;
+		}
+		to_init_move(a, b);
+		pa(b, a);
 	}
-} */
+	if(is_organized(a) == 1)
+		final_move(a);
+}
 
-t_stack	*get_target(t_stack *reference, t_stack *to_search)
+int	is_organized(t_stack **a)
+{
+	t_stack *temp;
+
+	temp = *a;
+	while ((temp))
+	{
+		if ((temp)->number > (temp)->next->number)
+		{
+			return (1);
+		}
+		(temp) = (temp)->next;
+	}
+	return (0);
+}
+
+void	final_move(t_stack **a)
+{
+	t_stack *first_number;
+	int i;
+
+	check_index(a);
+	first_number = find_first(a);
+	if (first_number->index < (find_size(*a) / 2))
+		move_up(a, first_number->index);
+	else
+	{
+		i = find_size(*a) - first_number->index + 1;
+		move_down(a, i);
+	}
+
+}
+
+t_stack	*find_first(t_stack **a)
+{
+	int big;
+	t_stack *first;
+	t_stack *temp;
+
+	big = find_big(*a);
+	temp = (*a);
+	while (temp)
+	{
+		if (temp->number < big && temp->number < first->number)
+			first = temp;
+		temp = temp->next;
+	}
+	return (first);
+}
+
+t_stack	*get_target(t_stack *reference, t_stack **to_search)
 {
 	t_stack *target;
 	t_stack *aux;
 	
-	target = to_search->first;
-	aux = to_search->first;
+	target = *to_search;
+	aux = *to_search;
 	while (aux != NULL)
 	{
 		if (aux->number > reference->number)
 			target = aux;
 		aux = aux->next;
 	}
-	aux = to_search->first;
+	aux = *to_search;
 	while (aux != NULL)
 	{
 		if (reference->number < aux->number && \
-			to_search->number < target->number)
+			aux->number < target->number)
 			target = aux;
 		aux = aux->next;
 	}
@@ -92,6 +125,8 @@ int	find_cost(t_stack *ref, t_stack *target)
 {
 	int b_cost;
 
+	if (ref->index == 1 && target->index == 1)
+		return (1);
 	get_middle_check(ref);
 	get_middle_check(target);
 	if (ref->middle_check == 1)
@@ -112,7 +147,7 @@ void get_middle_check(t_stack *ref)
 {
 	int middle;
 
-	ref->size = get_last(ref->first);
+	ref->size = get_last(ref);
 	middle = ref->size / 2;
 	if (ref->index > middle)
 	{

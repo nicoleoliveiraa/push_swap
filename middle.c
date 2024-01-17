@@ -83,34 +83,32 @@ int get_last(t_stack *a)
 	i = a->index;
 	return (i);
 }
-void	to_divide(t_stack *a, t_stack* b)
+void	to_divide(t_stack **a, t_stack **b)
 {
 	long int	middle;
 	int size;
 	int i;
 
 	i = 0;
-	size = find_size(a);
+	size = find_size(*a);
 	while (size > 3)
 	{
-		middle = find_middle(a, size);
-		i = get_last(a);
+		middle = find_middle(*a, size);
+		i = get_last(*a);
 	 	while (i-- >= 0)
 		{
-			if (a->first->number <= middle)
+			if ((*a)->first->number <= middle)
 			{
-				if(find_size(a) > 3)
-					pb(&a, &b);
+				if(find_size(*a) > 3)
+					pb(a, b);
 			}
 			else
-				ra(a);
+				ra(*a);
 		}
-		check_index(a->first, &a->first);
-		size = find_size(a->first);
+		check_index(a);
+		size = find_size(*a);
 	}
-	check_index(a->first, &a->first);
-	check_index(b->first, &b->first);
-	to_organize(a->first, b->first);
+	to_organize(a, b);
 }
 
 void move(t_stack *a, t_stack *b, int size)
@@ -124,13 +122,9 @@ void move(t_stack *a, t_stack *b, int size)
 			pb(&a, &b);
 		else
 			ra(a);
-		//printf("%d", aux->middle_check);
-		//aux = aux->next;
 		size--;
 	}
 }
-
-//t_stack	*find_cost()
 
 
 

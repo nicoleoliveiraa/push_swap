@@ -22,6 +22,7 @@ t_stack	*ft_lstnew(int nb, int index)
 	new->number = nb;
 	new->index = index;
 	new->cost = 0;
+	new->cheapest = 0;
 	new->middle_check = 0;
 	new->first = NULL;
 	new->min = NULL;
@@ -30,6 +31,12 @@ t_stack	*ft_lstnew(int nb, int index)
 	new->next = NULL;
 	return (new);
 }
+
+/* t_info	*save_head(t_stack *a, t_stack *b)
+{
+	t_info *head;
+
+} */
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
