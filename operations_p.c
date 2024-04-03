@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_p.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:23 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 12:15:46 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:53:48 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	push(t_stack **fst, t_stack **sec)
 	(*fst) = (*fst)->next;
 	aux->next = (*sec);
 	(*sec) = aux;
-	check_index(*&(*fst));
-	check_index(&(*sec));
+	check_index((*fst));
+	check_index((*sec));
 }
 
 void	pa(t_stack **stack_b, t_stack **stack_a)

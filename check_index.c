@@ -3,30 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   check_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:10:59 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/01/03 15:13:48 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:29:49 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_index(t_stack **stack)
+/* void	check_index(t_stack **stack)
 {
 	int	i;
+	int median;
 
-	i = 1;
-	while ((*stack) != NULL)
+	i = 0;
+	if (!(*stack))
+		return ;
+	median = find_size(*stack) / 2;
+	while (*stack)
 	{
 		(*stack)->index = i;
-		i++;
-		(*stack)->first = stack;
-		(*stack)->middle_check = 0;
-		(*stack)->max = find_max(stack);
+		if (i <= median)
+			(*stack)->middle_check = 1;
+		else
+			(*stack)->middle_check = 0;
+		i++;		
 		(*stack) = (*stack)->next;
 	}
-}
+} */
 
 t_stack *find_max(t_stack *stack)
 {

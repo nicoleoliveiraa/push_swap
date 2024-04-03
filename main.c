@@ -3,44 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:19 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 12:27:21 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:46:26 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void final_move(t_stack **stack_a)
+{
+	t_stack *small;
+
+	small = find_node(*stack_a, find_small(*stack_a));
+	while ((*stack_a) != small)
+	{
+		if (small->middle_check == 1)
+			ra(stack_a);
+		else
+			rra(stack_a);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	t_stack	*stack_b;
 
 	stack_a = NULL;
-	stack_b = NULL;
 	if (argc < 2)
-		return (0);
+		exit(1);
 	if (!check_parameters(argc, argv))
 		return (0);
 	stack_a = get_elements(argc, argv);
 	if(find_size(stack_a) == 2)
-	{
 		sort_two(&stack_a);
-		return (0);
-	}
 	else if(find_size(stack_a) == 3)
-	{
 		sort_three(&stack_a);
-		return (0);
-	}
 	else
-		to_divide(&stack_a, &stack_b);
-	while(stack_a)
-	{
-		printf("%ld\n", stack_a->number);
-		stack_a = stack_a->next;
-	}
-	
+		to_sort(&stack_a);
+	final_move(&stack_a);
+	free_stack(&stack_a, free);
 	return (0);
 }

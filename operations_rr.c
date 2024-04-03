@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_rr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:21:24 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/04 12:36:34 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:06:01 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	r_rotate(t_stack **stack)
 	current->next = first;
 	previous->next = NULL;
 	(*stack) = current;
-	check_index(&first);
+	check_index(first);
 }
 
 void	rra(t_stack **stack_a)

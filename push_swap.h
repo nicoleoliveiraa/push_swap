@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/21 11:43:51 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:45:31 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <strings.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -35,79 +36,82 @@ typedef struct s_stack
 	struct s_stack	*next; 
 }	t_stack;
 
-/* typedef struct s_info
-{
-	t_stack *first;
-}	t_info; */
+//check parameters
+int	check_number(int argc, char **argv);
+int	check_rep(int argc, char **argv);
+int	check_int(int argc, char **argv);
+int	check_order(int argc, char **argv);
+int	check_parameters(int argc, char **argv);
 
 //sort algorithm
 void		sort_two(t_stack **a);
 void		sort_three(t_stack **a);
 
-void		check_index(t_stack **stack);
-
-//midle
-void	to_divide(t_stack **a, t_stack **b);
-void	move(t_stack *a, t_stack *b, int size);
-int	find_middle(t_stack *a, int size);
-int find_size(t_stack *a);
-
-void	to_organize(t_stack **a, t_stack **b);
-t_stack	*get_target(t_stack *reference, t_stack **to_search);
-
-
-
-
+//get elements
 t_stack		*get_elements(int argc, char **argv);
 long int	ft_atol(char *nptr);
-t_stack		*ft_lstnew(int nb, int index);
-void		ft_lstadd_back(t_stack **lst, t_stack *new);
+
+//operations
 void		sa(t_stack *stack_a);
 void		sb(t_stack *stack_b);
 void		ss(t_stack *stack_a, t_stack *stack_b);
 void		pa(t_stack **stack_b, t_stack **stack_a);
 void		pb(t_stack **stack_a, t_stack **stack_b);
-void		ra(t_stack *stack_a);
-void		rb(t_stack *stack_b);
-void		rr(t_stack *stack_a, t_stack *stack_b);
+void		ra(t_stack **stack_a);
+void		rb(t_stack **stack_b);
+void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
-int			check_parameters(int argc, char **argv);
+
+//stack
+t_stack	*ft_lstnew(int nb, int index);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+int find_size(t_stack *a);
+
+//to_sort_b_a
+void	init_b(t_stack **a, t_stack **b);
+void	find_target(t_stack **src, t_stack **dst);
+t_stack	*find_node(t_stack *stack, long number);
+void	find_cost(t_stack **src, t_stack **dst);
+void	get_cost(t_stack *src, int size_src, int size_dst);
+void	find_cheapest(t_stack **stack);
+t_stack	*find_cheapest_node(t_stack *stack);
+void	move_to_a(t_stack **b, t_stack **a);
+void	before_push(t_stack **stack, t_stack *cheapest, char stack_name);
+void	move_together_up(t_stack **a, t_stack **b, t_stack *cheapest);
+void	move_together_down(t_stack **a, t_stack **b, t_stack *cheapest);
+
+//to_sort
+void	to_sort(t_stack **a);
+void	move_to_b(t_stack **a, t_stack **b);
+void	check_index(t_stack *stack);
+void	push_middle(t_stack **a, t_stack **b, int middle);
+int	how_much_middle(t_stack *a, int middle);
+void	free_stack(t_stack **stack, void(*del)(void *));
+void	make_free(void *ptr);
+t_stack	*under_node(t_stack *stack, int middle);
 
 //utils
 size_t		ft_strlen(char *str);
 void		ft_putstr_fd(char *s, int fd);
 int			ft_isdigit(int c);
-
-
-
-//cost
-int	find_cost(t_stack *reference, t_stack *target);
-void get_middle_check(t_stack *ref);
-
-int get_last(t_stack *stack);
-int	find_min(t_stack *list);
 t_stack *find_max(t_stack *stack);
+bool	is_sorted(t_stack *stack);
+long	find_big(t_stack *stack);
+long	find_small(t_stack *stack);
+void	print_stack(t_stack **stack);
 
-//move
-void	to_init_move(t_stack **a, t_stack **b);
-void to_move(t_stack **a, t_stack **b, t_stack *move);
-void	move_together(t_stack *move, t_stack *target, t_stack **a, t_stack **b);
-void	move_together_up(int m, int t, t_stack **a, t_stack **b);
-void	move_together_down(int m, int t, t_stack **a, t_stack **b);
-void move_apart(t_stack *move, t_stack *target, t_stack **a, t_stack **b);
-void	move_up(t_stack **stack, int i);
-void	move_down(t_stack **stack, int i);
 
-void	start_stack(t_stack **b);
-int	get_cheapest(t_stack **stack_b);
-void	check_middle(t_stack *stack);
-void	to_move_one(t_stack **a, t_stack **b);
+void final_move(t_stack **stack_a);
 
-t_stack	*find_first(t_stack **a);
-void	final_move(t_stack **a);
-int	is_organized(t_stack **a);
-int find_big(t_stack *list);
+
+
+
+
+
+
+
+
 
 #endif

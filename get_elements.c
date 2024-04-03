@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_elements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:02 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 12:37:31 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:42:40 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ t_stack	*get_elements(int argc, char **argv)
 		ft_lstadd_back(&a, aux);
 		i++;
 	}
-	check_index(&a);
+	check_index(a);
 	return (a);
 }

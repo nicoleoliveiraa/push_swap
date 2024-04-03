@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:36 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/01/03 15:20:15 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:55:02 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ t_stack	*ft_lstnew(int nb, int index)
 	return (new);
 }
 
-/* t_info	*save_head(t_stack *a, t_stack *b)
-{
-	t_info *head;
-
-} */
-
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*aux;
@@ -62,19 +56,10 @@ int find_size(t_stack *a)
 	
 	size = 0;
 	temp = a;
-	while (temp != NULL)
+	while (temp)
 	{
 		temp = temp->next;
 		size++;
 	}
 	return (size);
 }
-
-/* void	ft_lstadd_front(t_stack **lst, t_stack *new)
-{
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
-} */

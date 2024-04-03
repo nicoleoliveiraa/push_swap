@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm2and3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:53:58 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/20 12:42:11 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/03 09:39:54 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_three(t_stack **a)
 {
 	if ((*a)->number > (*a)->next->number && \
 		(*a)->number > (*a)->next->next->number)
-		ra(*a);
+		ra(a);
 	if ((*a)->next->number > (*a)->number && \
 	(*a)->next->number > (*a)->next->next->number)
 		rra(a);

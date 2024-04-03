@@ -3,17 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+         #
+#    By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:18:19 by nsouza-o          #+#    #+#              #
-#    Updated: 2023/12/20 12:26:50 by nsouza-o         ###   ########.fr        #
+#    Updated: 2024/04/02 18:14:31 by nsouza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRCS = check_index.c get_elements.c operations_p.c operations_r.c \
-	operations_rr.c operations_s.c stack.c main.c check_parameters.c \
-	utils.c algorithm2and3.c middle.c to_organize.c move.c
+SRCS = algorithm2and3.c \
+	check_index.c \
+	check_parameters.c \
+	get_elements.c \
+	main.c \
+	operations_p.c \
+	operations_r.c \
+	operations_s.c \
+	operations_rr.c \
+	stack.c \
+	to_sort.c \
+	to_sort_b_a.c \
+	utils.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc
