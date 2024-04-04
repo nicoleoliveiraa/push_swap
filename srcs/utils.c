@@ -6,11 +6,11 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 13:12:16 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/03 11:55:42 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:21:41 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(char *str)
 {
@@ -39,7 +39,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-bool	is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	t_stack	*tmp;
 
@@ -49,12 +49,12 @@ bool	is_sorted(t_stack *stack)
 		while (tmp)
 		{
 			if (tmp->number < stack->number)
-				return (false);
+				return (0);
 			tmp = tmp->next;
 		}
 		stack = stack->next;
 	}
-	return (true);
+	return (1);
 }
 
 long	find_big(t_stack *stack)

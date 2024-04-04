@@ -6,11 +6,11 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:23 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/03 15:53:48 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:20:53 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	push(t_stack **fst, t_stack **sec)
 {

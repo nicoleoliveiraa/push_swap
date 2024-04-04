@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations_s.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:27 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/04 12:35:51 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:21:14 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	s(t_stack *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/03 17:45:31 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:27:37 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,20 @@ size_t		ft_strlen(char *str);
 void		ft_putstr_fd(char *s, int fd);
 int			ft_isdigit(int c);
 t_stack *find_max(t_stack *stack);
-bool	is_sorted(t_stack *stack);
+int	is_sorted(t_stack *stack);
 long	find_big(t_stack *stack);
 long	find_small(t_stack *stack);
 void	print_stack(t_stack **stack);
 
 
 void final_move(t_stack **stack_a);
+
+//bonus
+int	check_moves(t_stack **a, t_stack **b);
+int	check_and_do_moves(t_stack **a, t_stack **b, char *line);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*get_line(int fd);
+int	ft_strchr(char *str, char c);
 
 
 

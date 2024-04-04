@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_parameters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsouza-o <nsouza-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:34 by nsouza-o          #+#    #+#             */
-/*   Updated: 2023/12/05 11:46:31 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:20:40 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_number(int argc, char **argv)
 {

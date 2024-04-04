@@ -6,11 +6,11 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:21:24 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/02 19:06:01 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:21:09 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	r_rotate(t_stack **stack)
 {
