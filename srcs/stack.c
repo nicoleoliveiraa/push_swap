@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:36 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:03:45 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:06:34 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	find_size(t_stack *a)
 	return (size);
 }
 
-void	free_stack(t_stack **stack, void(*del)(void *))
+void	free_stack(t_stack **stack, void(*del)(void*))
 {
 	t_stack	*temp;
 

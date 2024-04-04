@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:53:02 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 16:59:56 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:28:37 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,22 @@ void	init_b(t_stack **a, t_stack **b)
 void	find_target(t_stack **src, t_stack **dst)
 {
 	long	best;
-	t_stack	*temp;
+	t_stack	*temp_dst;
 	t_stack	*temp_src;
 
 	temp_src = *src;
 	while ((temp_src))
 	{
 		best = LONG_MAX;
-		temp = *dst;
-		while (temp)
+		temp_dst = *dst;
+		while (temp_dst)
 		{
-			if (temp->number > (temp_src)->number && temp->number < best)
+			if (temp_dst->number > temp_src->number && temp_dst->number < best)
 			{
-				best = temp->number;
-				(temp_src)->target = temp;
+				best = temp_dst->number;
+				temp_src->target = temp_dst;
 			}
-			temp = temp->next;
+			temp_dst = temp_dst->next;
 		}
 		if (best == LONG_MAX)
 		{

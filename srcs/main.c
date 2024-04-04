@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:19 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:00:56 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:00:34 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	final_move(t_stack **stack_a)
 	while ((*stack_a) != small)
 	{
 		if (small->middle_check == 1)
-			ra(stack_a);
+			ra(stack_a, 1);
 		else
-			rra(stack_a);
+			rra(stack_a, 1);
 	}
 }
 

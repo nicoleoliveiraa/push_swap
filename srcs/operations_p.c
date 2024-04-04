@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:23 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:53 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:52:11 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ void	push(t_stack **fst, t_stack **sec)
 	check_index((*sec));
 }
 
-void	pa(t_stack **stack_b, t_stack **stack_a)
+void	pa(t_stack **stack_b, t_stack **stack_a, int i)
 {
 	push(stack_b, stack_a);
-	write(1, "pa\n", 3);
+	if (i == 1)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	push(stack_a, stack_b);
-	write(1, "pb\n", 3);
+	if (i == 1)
+		write(1, "pb\n", 3);
 }

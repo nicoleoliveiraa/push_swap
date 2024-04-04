@@ -6,16 +6,16 @@
 #    By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/30 15:18:19 by nsouza-o          #+#    #+#              #
-#    Updated: 2024/04/04 17:21:45 by nsouza-o         ###   ########.fr        #
+#    Updated: 2024/04/04 23:50:15 by nsouza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+NAME_BONUS = checker
 SRCS_PATH = ./srcs
 BONUS_SRCS_PATH = ./bonus_srcs
 
 BONUS_SRCS = $(BONUS_SRCS_PATH)/checker.c \
-			$(BONUS_SRCS_PATH)/get_line.c \
 			$(SRCS_PATH)/check_index.c \
 			$(SRCS_PATH)/check_parameters.c \
 			$(SRCS_PATH)/get_elements.c \
@@ -58,14 +58,15 @@ $(NAME): $(OBJS) $(HEADER)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BONUS_OBJS) $(HEADER)
-	$(CC) $(CFLAGS) $(BONUS_OBJS) -o checker_bonus
+bonus: $(NAME_BONUS)
 
+$(NAME_BONUS): $(BONUS_OBJS) $(HEADER)
+	$(CC) $(CFLAGS) $(BONUS_OBJS) -o $(NAME_BONUS)
 clean: 
 	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME_BONUS)
 
 re: fclean $(NAME)
 

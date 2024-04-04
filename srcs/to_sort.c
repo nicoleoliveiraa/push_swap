@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:21:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:06:57 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:01:49 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	to_sort(t_stack **a)
 	b = NULL;
 	a_size = find_size(*a);
 	if (a_size-- > 3 && !is_sorted(*a))
-		pb(a, &b);
+		pb(a, &b, 1);
 	if (a_size-- > 3 && !is_sorted(*a))
-		pb(a, &b);
+		pb(a, &b, 1);
 	if (a_size > 3 && !is_sorted(*a))
 		move_to_b(a, &b);
 	sort_three(a);
@@ -66,12 +66,12 @@ void	push_middle(t_stack **a, t_stack **b, int middle)
 		before_push(a, under_node(*a, middle), 'a');
 		if ((*a)->number < middle)
 		{
-			pb(a, b);
+			pb(a, b, 1);
 			how_much--;
 			a_size--;
 		}
 		else
-			ra(a);
+			ra(a, 1);
 	}
 }
 

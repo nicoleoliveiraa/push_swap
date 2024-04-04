@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:36:13 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:05:43 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:01:24 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	move_to_a(t_stack **b, t_stack **a)
 	}
 	before_push(a, cheapest->target, 'a');
 	before_push(b, cheapest, 'b');
-	pa(b, a);
+	pa(b, a, 1);
 }
 
 void	before_push(t_stack **stack, t_stack *cheapest, char stack_name)
@@ -74,16 +74,16 @@ void	before_push(t_stack **stack, t_stack *cheapest, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (cheapest->middle_check == 1)
-				ra(stack);
+				ra(stack, 1);
 			else
-				rra(stack);
+				rra(stack, 1);
 		}
 		else if (stack_name == 'b')
 		{
 			if (cheapest->middle_check == 1)
-				rb(stack);
+				rb(stack, 1);
 			else
-				rrb(stack);
+				rrb(stack, 1);
 		}
 	}
 }

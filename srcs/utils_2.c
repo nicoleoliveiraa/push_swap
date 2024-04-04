@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:54:56 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:09:35 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:02:05 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	move_together_up(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while ((*b) != cheapest && (*a) != cheapest->target)
-		rr(a, b);
+		rr(a, b, 1);
 	check_index(*a);
 	check_index(*b);
 }
@@ -23,7 +23,7 @@ void	move_together_up(t_stack **a, t_stack **b, t_stack *cheapest)
 void	move_together_down(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while ((*a) != cheapest->target && (*b) != cheapest)
-		rrr(a, b);
+		rrr(a, b, 1);
 	check_index(*a);
 	check_index(*b);
 }

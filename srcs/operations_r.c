@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:46:38 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 17:01:40 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:54:13 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,24 @@ void	rotate(t_stack **stack)
 	check_index((*stack));
 }
 
-void	ra(t_stack **stack_a)
+void	ra(t_stack **stack_a, int i)
 {
 	rotate(stack_a);
-	write(1, "ra\n", 3);
+	if (i == 1)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **stack_b)
+void	rb(t_stack **stack_b, int i)
 {
 	rotate(stack_b);
-	write(1, "rb\n", 3);
+	if (i == 1)
+		write(1, "rb\n", 3);
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	write(1, "rr\n", 3);
+	if (i == 1)
+		write(1, "rr\n", 3);
 }
