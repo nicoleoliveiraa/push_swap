@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:21:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:21:37 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:06:57 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	to_sort(t_stack **a)
 {
 	t_stack	*b;
-	int a_size;
+	int		a_size;
 
 	b = NULL;
 	a_size = find_size(*a);
@@ -37,10 +37,10 @@ void	to_sort(t_stack **a)
 
 void	move_to_b(t_stack **a, t_stack **b)
 {
-	int	a_size;
-	long big;
-	long small;
-	int middle;
+	int		a_size;
+	long	big;
+	long	small;
+	int		middle;
 
 	a_size = find_size(*a);
 	while (a_size > 3 && !is_sorted(*a))
@@ -53,31 +53,9 @@ void	move_to_b(t_stack **a, t_stack **b)
 	}
 }
 
-void	check_index(t_stack *stack)
-{
-	int	i;
-	int	median;
-
-	i = 0;
-	if (!stack)
-		return ;
-	median = find_size(stack) / 2;
-	while (stack)
-	{
-		stack->index = i;
-		if (i <= median)
-			stack->middle_check = 1;
-		else
-			stack->middle_check = 0;
-		stack = stack->next;
-		i++;
-	}
-	
-}
-
 void	push_middle(t_stack **a, t_stack **b, int middle)
 {
-	int a_size;
+	int	a_size;
 	int	how_much;
 
 	a_size = find_size(*a);
@@ -113,7 +91,7 @@ t_stack	*under_node(t_stack *stack, int middle)
 
 int	how_much_middle(t_stack *a, int middle)
 {
-	int how_much;
+	int	how_much;
 
 	how_much = 0;
 	while (a)
@@ -123,26 +101,4 @@ int	how_much_middle(t_stack *a, int middle)
 		a = a->next;
 	}
 	return (how_much);
-}
-
-void	free_stack(t_stack **stack, void(*del)(void *))
-{
-	t_stack	*temp;
-	if (!*stack || !del)
-		return ;
-	while (*stack)
-	{
-		temp = (*stack)->next;
-		make_free(*stack);
-		*stack = temp;
-	}
-}
-
-void	make_free(void *ptr)
-{
-	if (ptr)
-	{
-		free(ptr);
-		ptr = NULL;
-	}
 }

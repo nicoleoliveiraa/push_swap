@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:53:58 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:30 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:57:57 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_two(t_stack **a)
 {
-	if((*a)->next->number > (*a)->number)
+	if ((*a)->next->number > (*a)->number)
 		return ;
 	sa(*a);
 }

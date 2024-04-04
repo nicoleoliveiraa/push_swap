@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 13:12:16 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:21:41 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:09:06 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,14 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	is_sorted(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack)
-	{
-		tmp = stack->next;
-		while (tmp)
-		{
-			if (tmp->number < stack->number)
-				return (0);
-			tmp = tmp->next;
-		}
-		stack = stack->next;
-	}
-	return (1);
-}
-
 long	find_big(t_stack *stack)
 {
-	long big;
-	
+	long	big;
+
 	big = stack->number;
-	while(stack)
+	while (stack)
 	{
-		if(stack->number > big)
+		if (stack->number > big)
 			big = stack->number;
 		stack = stack->next;
 	}
@@ -73,26 +55,14 @@ long	find_big(t_stack *stack)
 
 long	find_small(t_stack *stack)
 {
-	long small;
-	
+	long	small;
+
 	small = stack->number;
-	while(stack)
+	while (stack)
 	{
-		if(stack->number < small)
+		if (stack->number < small)
 			small = stack->number;
 		stack = stack->next;
 	}
 	return (small);
-}
-
-void	print_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = *stack;
-	while (tmp)
-	{
-		printf("%d %ld %d %d %d\n", tmp->index, tmp->number, tmp->cost, tmp->cheapest, tmp->middle_check);
-		tmp = tmp->next;
-	}
 }

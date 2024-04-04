@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:52:43 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:29:11 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:20:52 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,20 @@ int	check_moves(t_stack **a, t_stack **b)
 	line = get_line(0);
 	while (line)
 	{
+		if (!ft_strncmp(line, "", 1))
+			return (1);
 		if (!check_and_do_moves(a, b, line))
+		{
+			free(line);	
 			return (0);
+		}
+		free(line);
 		line = get_line(0);
+	}
+	if (!line)
+	{
+		free(line);
+		return (0);
 	}
 	free(line);
 	return (1);

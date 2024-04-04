@@ -6,15 +6,15 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:19 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:49 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:00:56 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void final_move(t_stack **stack_a)
+void	final_move(t_stack **stack_a)
 {
-	t_stack *small;
+	t_stack	*small;
 
 	small = find_node(*stack_a, find_small(*stack_a));
 	while ((*stack_a) != small)
@@ -36,9 +36,9 @@ int	main(int argc, char **argv)
 	if (!check_parameters(argc, argv))
 		return (0);
 	stack_a = get_elements(argc, argv);
-	if(find_size(stack_a) == 2)
+	if (find_size(stack_a) == 2)
 		sort_two(&stack_a);
-	else if(find_size(stack_a) == 3)
+	else if (find_size(stack_a) == 3)
 		sort_three(&stack_a);
 	else
 		to_sort(&stack_a);

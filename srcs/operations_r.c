@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:46:38 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:58 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:01:40 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	rotate(t_stack **stack)
 {
-	t_stack *temp;
-	t_stack *first;
+	t_stack	*temp;
+	t_stack	*first;
 
-	if (!(*stack) || !(*stack)->next)	
+	if (!(*stack) || !(*stack)->next)
 		return ;
 	first = (*stack);
 	temp = (*stack)->next;
