@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 19:52:43 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 00:03:04 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:02:55 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	check_moves(t_stack **a, t_stack **b, int i)
 {
 	char	*line;
 	char	c;
-	
+
 	line = malloc(5);
 	while (read(0, &c, 1))
 	{
-		if(c == '\n' || i == 4)
+		if (c == '\n' || i == 4)
 		{
 			line[i] = '\0';
 			if (!check_and_do_moves(a, b, line))
@@ -74,11 +74,11 @@ void	check_moves(t_stack **a, t_stack **b, int i)
 				free_stack(a, make_free);
 				free_stack(b, make_free);
 				write(2, "Error\n", 6);
-				exit(1);	
+				exit(1);
 			}
 			i = 0;
 			free(line);
-			line = malloc(5);			
+			line = malloc(5);
 		}
 		else
 			line[i++] = c;
@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	
+
 	if (argc < 2)
 		return (0);
 	if (!check_parameters(argc, argv))

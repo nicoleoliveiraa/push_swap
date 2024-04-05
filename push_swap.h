@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 00:06:26 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:04:38 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		move_to_b(t_stack **a, t_stack **b);
 void		check_index(t_stack *stack);
 void		push_middle(t_stack **a, t_stack **b, int middle);
 int			how_much_middle(t_stack *a, int middle);
-void		free_stack(t_stack **stack, void(*del)(void*));
+void		free_stack(t_stack **stack, void (*del)(void*));
 void		make_free(void *ptr);
 t_stack		*under_node(t_stack *stack, int middle);
 
@@ -104,10 +104,8 @@ void		print_stack(t_stack **stack);
 void		final_move(t_stack **stack_a);
 
 //bonus
-void	check_moves(t_stack **a, t_stack **b, int i);
+void		check_moves(t_stack **a, t_stack **b, int i);
 int			check_and_do_moves(t_stack **a, t_stack **b, char *line);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-char		*get_line(int fd);
-int			ft_strchr(char *str, char c);
 
 #endif

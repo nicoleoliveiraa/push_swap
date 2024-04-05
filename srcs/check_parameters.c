@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:34 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:40 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:44:49 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,6 @@ int	check_parameters(int argc, char **argv)
 	if (!check_number(argc, argv))
 		return (0);
 	if (!check_rep(argc, argv))
-		return (0);
-	if (!check_order(argc, argv))
 		return (0);
 	return (1);
 }
