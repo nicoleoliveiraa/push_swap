@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:53:02 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 00:28:37 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:10:26 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	find_cost(t_stack **src, t_stack **dst)
 	int		size_dst;
 	t_stack	*temp;
 
-	size_src = find_size(*src);
-	size_dst = find_size(*dst);
+	size_src = find_size(src);
+	size_dst = find_size(dst);
 	temp = *src;
 	while (temp)
 	{

@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:36 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 14:03:34 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:39:53 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	aux->next = new;
 }
 
-int	find_size(t_stack *a)
+int	find_size(t_stack **a)
 {
 	int		size;
 	t_stack	*temp;
 
 	size = 0;
-	temp = a;
+	temp = (*a);
 	while (temp)
 	{
 		temp = temp->next;

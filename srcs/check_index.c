@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:10:59 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/04 16:59:01 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:10:15 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	check_index(t_stack *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = find_size(stack) / 2;
+	median = find_size(&stack) / 2;
 	while (stack)
 	{
 		stack->index = i;

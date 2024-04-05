@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:21:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 00:01:49 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:14:39 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	to_sort(t_stack **a)
 {
 	t_stack	*b;
-	int		a_size;
+	int		a_size = 0;
 
 	b = NULL;
-	a_size = find_size(*a);
+	a_size = find_size(a);
 	if (a_size-- > 3 && !is_sorted(*a))
 		pb(a, &b, 1);
 	if (a_size-- > 3 && !is_sorted(*a))
@@ -42,14 +42,14 @@ void	move_to_b(t_stack **a, t_stack **b)
 	long	small;
 	int		middle;
 
-	a_size = find_size(*a);
+	a_size = find_size(a);
 	while (a_size > 3 && !is_sorted(*a))
 	{
 		big = find_big(*a);
 		small = find_small(*a);
 		middle = small + ((big - small) / 2);
 		push_middle(a, b, middle);
-		a_size = find_size(*a);
+		a_size = find_size(a);
 	}
 }
 
@@ -58,7 +58,7 @@ void	push_middle(t_stack **a, t_stack **b, int middle)
 	int	a_size;
 	int	how_much;
 
-	a_size = find_size(*a);
+	a_size = find_size(a);
 	how_much = how_much_middle(*a, middle);
 	while ((how_much > 0) && (a_size > 3) && !is_sorted(*a))
 	{

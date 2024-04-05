@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:31 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 14:04:38 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:40:00 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		rrr(t_stack **stack_a, t_stack **stack_b, int i);
 //stack
 t_stack		*ft_lstnew(int nb, int index);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
-int			find_size(t_stack *a);
+int			find_size(t_stack **a);
 
 //to_sort_b_a
 void		init_b(t_stack **a, t_stack **b);

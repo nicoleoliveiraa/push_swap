@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:54:34 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 17:44:49 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 20:51:06 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	check_number(int argc, char **argv)
 					j++;
 				else
 				{
-					ft_putstr_fd("Error\n", 2);
 					return (0);
 				}
 			}
@@ -54,7 +53,6 @@ int	check_rep(int argc, char **argv)
 		{
 			if (ft_atol(argv[i]) == ft_atol(argv[j]))
 			{
-				ft_putstr_fd("Error\n", 2);
 				return (0);
 			}
 			j++;
@@ -74,7 +72,6 @@ int	check_int(int argc, char **argv)
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 		{
-			ft_putstr_fd("Error\n", 2);
 			return (0);
 		}
 	}

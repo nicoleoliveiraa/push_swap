@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 15:36:19 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/04/05 00:00:34 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/04/05 21:04:17 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,16 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		exit(1);
 	if (!check_parameters(argc, argv))
+	{
+		ft_putstr_fd("Error\n", 2);
 		return (0);
+	}
 	stack_a = get_elements(argc, argv);
-	if (find_size(stack_a) == 2)
+	if (find_size(&stack_a) == 2)
 		sort_two(&stack_a);
-	else if (find_size(stack_a) == 3)
+	else if (find_size(&stack_a) == 3)
 		sort_three(&stack_a);
-	else
+	else if (find_size(&stack_a) > 3)
 		to_sort(&stack_a);
 	final_move(&stack_a);
 	free_stack(&stack_a, free);
